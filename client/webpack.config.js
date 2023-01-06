@@ -21,9 +21,9 @@ module.exports = () => {
       // Webpack plugin that generates our html file and injects our bundles. 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'JATE - Just Another Text Editor'
+        title: 'Text Editor'
       }),
-     
+      
       // Injects our custom service worker
       new InjectManifest({
         swSrc: './src-sw.js',
@@ -34,9 +34,9 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'JATE - Just Another Text Editor',
+        name: 'Text Editor',
         short_name: 'JATE',
-        description: 'A text editor just like the others, but also not.',
+        description: 'Edit all the things!',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
@@ -53,7 +53,7 @@ module.exports = () => {
 
     module: {
       rules: [
-      {
+        {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
@@ -72,7 +72,7 @@ module.exports = () => {
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
-        },  
+        },
       ],
     },
   };
